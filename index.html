@@ -30,6 +30,7 @@
 
             $('input[name=encrypt]').click(function (event) {
                 try {
+                    event.preventDefault();
                     var key = $('input[name=password]').val();
                     var text = $('textarea[name=text]').val();
 
@@ -48,8 +49,9 @@
 
                 return false;
             });
-            $('input[name=decrypt]').click(function () {
+            $('input[name=decrypt]').click(function (event) {
                 try {
+                    event.preventDefault();
                     var key = $('input[name=password]').val();
                     var text = $('textarea[name=text]').val();
 
