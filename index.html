@@ -16,19 +16,19 @@
         <form>
             <textarea name="text" placeholder="Текст" rows="12" cols="70"></textarea><br />
             <input type="text" placeholder="Ключ" name="password" size="56" /><br />
-            <input type="button" name="encrypt" value="Зашифровать">
-            <input type="button" name="decrypt" value="Расшифровать"><br />
+            <div style="border: 1px solid #ffff; padding: 10px; margin: 10px 0; cursor: pointer; background: #fff " type="button" id="button_1" name="encrypt" value="Зашифровать">Шифровать</div>
+            <div style="border: 1px solid #ffff; padding: 10px; margin: 10px 0; cursor: pointer; background: #fff " type="button" id="button_2" name="decrypt" value="Расшифровать">Расшифровать</div><br />
             <textarea name="result" placeholder="Ответ" rows="12" cols="70"></textarea>
         </form>
     </div>
 
     <script type="text/javascript">
         $(function () {
-            $('input[name=encrypt]').submit(function (event) {
+            $('#button_1').submit(function (event) {
                 event.preventDefault();
             });
 
-            $('input[name=encrypt]').click(function (event) {
+            $('#button_1').click(function (event) {
                 try {
                     event.preventDefault();
                     var key = $('input[name=password]').val();
@@ -49,7 +49,7 @@
 
                 return false;
             });
-            $('input[name=decrypt]').click(function (event) {
+            $('#button_2').click(function (event) {
                 try {
                     event.preventDefault();
                     var key = $('input[name=password]').val();
